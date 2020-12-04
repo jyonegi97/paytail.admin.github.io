@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Paytail Admin Pannel</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/custom.css">
+
+  <link rel="stylesheet" href="dist/css/hover-min.css">
+
+  <!-- Material Icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="dist/img/favicon.png">
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!--Select2-->
+    <link rel="stylesheet" src="bower_components/select2/dist/css/select2.min.css">
+</head>
+    <body class="hold-transition fixed skin-blue sidebar-mini">
+        <div class="wrapper">
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="dist/img/minilogo.svg" class="img-fluid"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="dist/img/whitelogo.svg" class="img-fluid"></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle image-padding" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="user user-menu dropdown">
+                                <a href="#" class="image-padding hvr-rectangle-in dropdown-toggle" data-toggle="dropdown">
+                                    <img src="dist/img/orignal-logo.svg" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Paytail</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="dist/img/orignal-logo.svg" class="img-circle" alt="User Image">
+                                        <p>Paytail<small>Admin</small></p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="admin-profile.html" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="login.html" class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar" style="padding-top: 14px;">
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="hvr-sweep-to-right">
+                            <a href="index.html">
+                                <i class="fa fa-dashboard"></i><span>Dashboard</span>
+                                <span class="pull-right-container"></span>
+                            </a>
+                        </li>
+                        <li class="hvr-sweep-to-right">
+                            <a href="#">
+                                <i class="fa fa-table"></i> <span>Master Data</span>
+                                    <span class="pull-right-container"></span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="corporate.html">
+                                <i class="fa fa-building"></i> <span>Corporate</span>
+                                    <span class="pull-right-container"></span>
+                            </a>
+                        </li>
+                        <li class="hvr-sweep-to-right">
+                            <a href="#">
+                                <i class="fa fa-industry"></i> <span>Merchant</span>
+                                    <span class="pull-right-container"></span>
+                            </a>
+                        </li>
+                        <li class="hvr-sweep-to-right">
+                            <a href="#">
+                                <i class="fa fa-user"></i> <span>Consumers</span>
+                                <span class="pull-right-container"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content">
+                    <!-- Info boxes -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                                    <li><a href="#">Corporate</a></li>
+                                    <li class="active">Add New Corporate</li>
+                                </ol>
+                                <div class="col-md-6">
+                                    <h3 class="heading-weight">Add New Corporate</h3>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <div class="btn-group add-button-bt">
+                                        <button type="button" class="btn btn-default btn-white">Bulk Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box box-primary">
+                                <div class="box-body">
+                                    <ul class="nav nav-tabs">
+                                        <li  class="active"><a data-toggle="tab" href="#basic_details">Basic Details</a></li>
+                                        <li><a data-toggle="tab" href="#brand">Brand</a></li>
+                                        <li><a data-toggle="tab" href="#sku_details">SKU Details</a></li>
+                                        <li><a data-toggle="tab" href="#emipayment">EMI Payment</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="basic_details" class="tab-pane fade in active">
+                                            <div class="box box-info">
+                                                <form class="form-horizontal">
+                                                    <div class="box-body" style="margin: 8px 8px;">
+                                                        <div class="form-group">
+                                                            <label for="inputcompany" class="col-sm-3 control-label">Name of the Company</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <input type="type" class="form-control" id="inputcompany" placeholder="Company Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-3 control-label">Date of Onboarding</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <div class="input-group date">
+                                                                    <div class="input-group-addon">
+                                                                      <i class="fa fa-calendar"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker">
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-3 control-label">Date of First Transaction</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <div class="input-group date">
+                                                                    <div class="input-group-addon">
+                                                                      <i class="fa fa-calendar"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker">
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputCorporateID" class="col-sm-3 control-label">Corporate ID</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="CorporateID" placeholder="Enter Corporate ID">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputGST" class="col-sm-3 control-label">GST Number</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="inputGST" placeholder="Enter GST number">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputofficeaddresses" class="col-sm-3 control-label">Office Addresses</label>
+                                      
+                                                            <div class="col-sm-8">
+                                                                <input type="type" class="form-control" id="inputofficeaddresses" placeholder="Address">
+                                                            </div>
+                                                            <div class="col-sm-1">
+                                                                <i class="fa fa-plus add-more"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputSPOCs" class="col-sm-3 control-label">SPOCs</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <div class="tag-container">
+                                                                    <input type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputVirtualAccountNumber" class="col-sm-3 control-label">Virtual Account Number</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <input type="number" class="form-control" id="inputVirtualAccountNumber" placeholder="Virtual Account Number">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-3 control-label">Billing Frequency</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <select class="form-control select2">
+                                                                    <option disabled selected hidden>Select option</option>
+                                                                    <option>Transaction wise</option>
+                                                                    <option>Weekly</option>
+                                                                    <option>Monthly</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputTurnoverofthecompany" class="col-sm-3 control-label">Turnover of the Company</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <input type="number" class="form-control" id="inputTurnoverofthecompany" placeholder="Turnover of the Company">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 text-center">
+                                                            <button class="btn btn-primary">SAVE & NEXT</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div id="brand" class="tab-pane fade">
+                                            <div class="box box-info">
+                                                <form class="form-horizontal">
+                                                    <div class="box-body">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputcorporatename" class="col-sm-4 control-label">Corporate Name</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="type" class="form-control" id="inputcorporatename" placeholder="Corporate Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputbrandID" class="col-sm-4 control-label">Brand ID</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="type" class="form-control text-uppercase" id="inputbrandID" placeholder="Brand ID">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputbrandname" class="col-sm-4 control-label">Brand Name</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="type" class="form-control" id="inputbrandname" placeholder="Brand Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="" class="col-sm-4 control-label">Brand Logo</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <button type="button" class="btn bg-purple"> Upload Logo</button>
+                                                                        <input type="file" class="form-control"></td>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 text-center">
+                                                            <button class="btn btn-primary">SAVE</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive scroll-table-campign-page">
+                                                        <table id="example1" class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Corpoarte Name</th>
+                                                                    <th>Brand ID</th>
+                                                                    <th>Brand Name</th>
+                                                                    <th>Brand Logo</th>
+                                                                    <th>Category</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">XYZ Company
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SAMSUNG1456
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">Samsung
+                                                                    </td>
+                                                                    <td class="text-purple fw-600">
+                                                                        <div class="img-cover">
+                                                                            <img src="dist/img/samsung_logo_PNG5.png" class="product-images img-fluid" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">Electronics
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">XYZ Company
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SAMSUNG1456
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">Samsung
+                                                                    </td>
+                                                                    <td class="text-purple fw-600">
+                                                                        <div class="img-cover">
+                                                                            <img src="dist/img/samsung_logo_PNG5.png" class="product-images img-fluid" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">Electronics
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">XYZ Company
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SAMSUNG1456
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">Samsung
+                                                                    </td>
+                                                                    <td class="text-purple fw-600">
+                                                                        <div class="img-cover">
+                                                                            <img src="dist/img/samsung_logo_PNG5.png" class="product-images img-fluid" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">Electronics
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn btn-primary">SAVE & NEXT</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div id="sku_details" class="tab-pane fade">
+                                            <div class="box box-info">
+                                                <form class="form-horizontal">
+                                                    <div class="box-body border-brands">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputbrandname" class="col-sm-4 control-label">Brand Name</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <select name="" id="" class="form-control select2">
+                                                                            <option disabled selected hidden>Select option</option>
+                                                                            <option>Livguard</option>
+                                                                            <option>Livfast</option>
+                                                                            <option>Samsung</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputproductname" class="col-sm-4 control-label">Product Name</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="inputproductname" placeholder="Product Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputproductcategory" class="col-sm-4 control-label">Product Category</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <select name="" id="" class="form-control select2">
+                                                                            <option disabled selected hidden>Select option</option>
+                                                                            <option>Fashion</option>
+                                                                            <option>Kids</option>
+                                                                            <option>Electronics and Media</option>
+                                                                            <option>Food</option>
+                                                                            <option>Furniture</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputskuname" class="col-sm-4 control-label">SKU Name</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="inputskuname" placeholder="SKU Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputskucode" class="col-sm-4 control-label">SKU Code</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="inputskucode" placeholder="SKU Code">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputskuserialnumbers" class="col-sm-4 control-label">SKU Serial Numbers</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="inputskuserialnumbers" placeholder="SKU Serial Numbers">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputskumrp" class="col-sm-4 control-label">SKU MRP</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <input type="number" class="form-control" id="inputskumrp" placeholder="SKU MRP">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="inputpicture" class="col-sm-4 control-label">SKU Picture</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <button type="button" class="btn bg-purple"> Upload Picture</button>
+                                                                        <input type="file" class="form-control" id="inputskupicture" placeholder="SKU Picture">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="" class="col-sm-4 control-label">Add more Fileds</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <a data-toggle="modal" data-target="#addfields"><i class="fa fa-plus add-more"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 text-center">
+                                                            <button class="btn btn-primary">SAVE</button>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="box box-default collapsed-box collapse-product-box">
+                                                        <div class="box-header with-border">
+                                                          <h3 class="box-title">Product 1</h3>
+                                            
+                                                          <div class="box-tools pull-right">
+                                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                                <i class="fa fa-plus text-white"></i>
+                                                            </button>
+                                                            <a class="btn btn-box-tool hvr-grow">
+                                                                <i class="fa fa-edit text-white"></i>
+                                                            </a>
+                                                            <a class="btn btn-box-tool hvr-grow" >
+                                                                <i class="fa fa-trash text-white"></i>
+                                                            </a>
+                                                          </div>
+                                                          <!-- /.box-tools -->
+                                                        </div>
+                                                        <!-- /.box-header -->
+                                                        <div class="box-body">
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>Brand Name</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">Samsung</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>Product Name</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">Samsung 139.70cm (55 inch) 4k Ultra HD LE...</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>Product Category</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">Electronics and Media</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>SKU Name</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">SKU 1</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>SKU Code</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">SAM123</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>SKU Serial Numbers</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">SAMSUNG1234567</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>SKU MRP</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">25000</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <b>SKU Pictures</b>
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <img src="dist/img/tv.png" class="img-fluid border-sku" alt="">
+                                                                                <img src="dist/img/tv.png" class="img-fluid border-sku" alt="">
+                                                                                <img src="dist/img/tv.png" class="img-fluid border-sku" alt="">
+                                                                                <img src="dist/img/tv.png" class="img-fluid border-sku" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12" style="margin-top: 20px;">
+                                                                        <h4>Additional Fields</h4>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-4">
+                                                                                <b>Warrenty</b>
+                                                                            </div>
+                                                                            <div class="col-sm-8">
+                                                                                <p class="pull-right">3 Month</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                                <b>Description</b>
+                                                                            </div>
+                                                                            <div class="col-sm-12">
+                                                                                <p class="pull-right">4K (Resolution: 3840x2160), Refresh Rate: 60 hertz
+                                                                                    Connectivity - Input: 2*HDMI, 1*USB, 0*VGA
+                                                                                    Audio: 20 W output
+                                                                                    Warranty Information: 1 Year Standard Manufacturer Warranty From Samsung
+                                                                                    Installation: For requesting installation/wall mounting/demo of this product once delivered, please directly call Samsung support on 180040 7267865 and provide product's model name as well as seller's details mentioned on the invoice
+                                                                                    Resolution: 4K Ultra HD (3840X2160) | Refresh Rate: 60 hertz
+                                                                                    Connectivity: 2 HDMI ports to connect set top box, Blu Ray players, gaming console | 1 USB ports to connect hard drives and other USB devices
+                                                                                    Sound : 20 Watts Output | Dolby Digital Plus | Adaptive Sound
+                                                                                    Smart TV Features : Voice Assistants | SmartThings App | Personal Computer | Home Cloud | Live Cast | Screen Share | Music System
+                                                                                    Display: LED Panel | Wide Colour Enhancer | HD Picture Quality | Slim & Stylish Design
+                                                                                    Warranty Information: 1 year comprehensive and 1 year additional warranty on Panel by Samsung
+                                                                                    Easy returns: This product is eligible for replacement within 10 days of delivery in case of any product defects, damage or features not matching the description provided</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.box-body -->
+                                                    </div>
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn btn-primary">SAVE & NEXT</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            
+                                        </div>
+                                        <div id="emipayment" class="tab-pane fade">
+                                            <div class="box box-info">
+                                                <form class="form-horizontal">
+                                                    <div class="box-body">
+                                                        <div class="row emi-options">
+                                                            <div class="col-md-10">
+                                                                <div class="form-group">
+                                                                    <label>EMI tenure (Up to 3, 6, 9, 12 months)</label>
+                                                                    <div class="onoffswitch4 pull-right">
+                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch1" checked>
+                                                                        <label class="onoffswitch4-label" for="myonoffswitch1">
+                                                                            <span class="onoffswitch4-inner"></span>
+                                                                            <span class="onoffswitch4-switch"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <div class="form-group">
+                                                                    <label>Agreed subvention commercials with brand with Paytail
+                                                                        <ol class="list-group emi-list"  type="a">
+                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
+                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
+                                                                            </li>
+                                                                        </ol>
+                                                                    </label>
+                                                                    <div class="onoffswitch4 pull-right">
+                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch2" checked>
+                                                                        <label class="onoffswitch4-label" for="myonoffswitch2">
+                                                                            <span class="onoffswitch4-inner"></span>
+                                                                            <span class="onoffswitch4-switch"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <div class="form-group">
+                                                                    <label>Brand subvention cost + Merchant 
+                                                                        <ol class="list-group emi-list"  type="a">
+                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
+                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
+                                                                            </li>
+                                                                        </ol>
+                                                                    </label>
+                                                                    <div class="onoffswitch4 pull-right">
+                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch3" checked>
+                                                                        <label class="onoffswitch4-label" for="myonoffswitch3">
+                                                                            <span class="onoffswitch4-inner"></span>
+                                                                            <span class="onoffswitch4-switch"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <div class="form-group">
+                                                                    <label>Merchant Subvention (Total EMI cost minus brand sub vented) 
+                                                                        <ol class="list-group emi-list"  type="a">
+                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
+                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
+                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
+                                                                            </li>
+                                                                        </ol>
+                                                                    </label>
+                                                                    <div class="onoffswitch4 pull-right">
+                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch4" checked>
+                                                                        <label class="onoffswitch4-label" for="myonoffswitch4">
+                                                                            <span class="onoffswitch4-inner"></span>
+                                                                            <span class="onoffswitch4-switch"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 text-center">
+                                                                <button class="btn btn-primary">SAVE & NEXT</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fix for small devices only -->
+                    <div class="clearfix visible-sm-block"></div>
+                    <!-- /.row -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <div class="modal fade" id="addfields">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Add Fields</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="todo-list">
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">Brand Name</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">Product Name</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">Product Category</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">SKU Name</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">SKU Code</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">SKU Serial Numbers</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="todo-list">
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">SKU MRP</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="" checked>
+                                        <span class="text">SKU Picture</span>
+                                    </li>
+                                    <li>
+                                        <!-- checkbox -->
+                                        <input type="checkbox" value="">
+                                        <span class="text">Warranty</span>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="">
+                                        <span class="text">Description</span>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" value="">
+                                        <span class="text">Material</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Add Fields</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+              </div>
+              <!-- /.modal -->
+
+            <footer class="main-footer text-center">
+                <strong>Copyright &copy; <a href="https://www.paytail.com/" target="_blank">Paytail Commerce Pvt. Ltd.</a> 2020.</strong> All rights
+                reserved.
+            </footer>
+
+  
+
+  
+
+        </div>
+        <!-- ./wrapper -->
+
+        <script src="dist/js/custom.js"></script>
+
+        <!-- jQuery 3 -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script> 
+        <!-- Bootstrap 3.3.7 -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- datepicker -->
+        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/adminlte.min.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="dist/js/pages/dashboard2.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="dist/js/demo.js"></script>
+        
+        <!-- DataTables -->
+        <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- Select2 -->
+        <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+        <script>
+            $(function () {
+                //Date picker
+                $('#datepicker').datepicker({
+                    autoclose: true
+                })
+            });
+        </script>
+    </body>
+</html>
