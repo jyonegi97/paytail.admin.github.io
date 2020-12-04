@@ -51,3 +51,25 @@ const tagContainer = document.querySelector('.tag-container');
     })
 
     input.focus();
+
+
+    // Add office addresses
+
+  var max_fields      = 10;
+  var wrapper         = $(".input_fields_wrap"); 
+  var add_button      = $(".add_field_button");
+
+$(add_button).click(function(e){
+	e.preventDefault();
+	var total_fields = wrapper[0].childNodes.length;
+	if(total_fields < max_fields){
+		$(wrapper).append('<input type="type" class="form-control" id="inputofficeaddresses" placeholder="Address">');
+	}
+});
+$(remove_button).click(function(e){
+	e.preventDefault();
+	var total_fields = wrapper[0].childNodes.length;
+	if(total_fields>1){
+		wrapper[0].childNodes[total_fields-1].remove();
+	}
+});

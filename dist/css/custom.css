@@ -351,89 +351,7 @@ span.end.badge {
   background: transparent;
   color: #97a0b3;
 }
-.onoffswitch4 {
-  position: relative;
-  width: 100px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
 
-.onoffswitch4-checkbox {
-  display: none;
-}
-
-.onoffswitch4-label {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  border: 2px solid #7441f5;
-  border-radius: 0px;
-}
-.onoffswitch4-inner {
-  display: block;
-  width: 200%;
-  margin-left: -100%;
-  -moz-transition: margin 0.3s ease-in 0s;
-  -webkit-transition: margin 0.3s ease-in 0s;
-  -o-transition: margin 0.3s ease-in 0s;
-  transition: margin 0.3s ease-in 0s;
-}
-.onoffswitch4-checkbox:checked + .onoffswitch4-label .onoffswitch4-inner {
-  margin-left: 0;
-}
-.onoffswitch4-checkbox:checked + .onoffswitch4-label .onoffswitch4-switch {
-  right: 0px;
-}
-.onoffswitch4-checkbox {
-  display: none;
-}
-.onoffswitch4-inner:before,
-.onoffswitch4-inner:after {
-  display: block;
-  float: left;
-  width: 50%;
-  height: 30px;
-  padding: 0;
-  line-height: 26px;
-  font-size: 14px;
-  color: white;
-  font-family: Trebuchet, Arial, sans-serif;
-  font-weight: bold;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-.onoffswitch4-inner:before {
-  content: "Enable";
-  padding-left: 10px;
-  background-color: #ffffff;
-  color: #7441f5;
-}
-.onoffswitch4-inner:after {
-  content: "Disable";
-  padding-right: 10px;
-  background-color: #ffffff;
-  color: #666666;
-  text-align: right;
-}
-.onoffswitch4-switch {
-  display: block;
-  width: 25px;
-  height: 33px;
-  margin: 0px;
-  background: #7441f5;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 74px;
-  -moz-transition: all 0.3s ease-in 0s;
-  -webkit-transition: all 0.3s ease-in 0s;
-  -o-transition: all 0.3s ease-in 0s;
-  transition: all 0.3s ease-in 0s;
-}
 .emi-options {
   padding: 0px 50px;
 }
@@ -457,6 +375,9 @@ span.end.badge {
   padding-top: 9px;
   cursor: pointer;
   color: #ffffff;
+}
+.dataTables_length {
+  display: none;
 }
 .form-horizontal {
   padding: 10px 0px 49px 0px;
@@ -557,6 +478,9 @@ span.badge {
   margin-top: -21px;
 }
 
+span.select2.select2-container.select2-container--default {
+  width: 100% !important;
+}
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;

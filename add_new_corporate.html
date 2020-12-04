@@ -13,7 +13,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   
-  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/datatable/jquery.dataTables.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   
@@ -29,12 +29,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Favicon-->
   <link rel="shortcut icon" href="dist/img/favicon.png">
-  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <!--Select2-->
-    <link rel="stylesheet" src="bower_components/select2/dist/css/select2.min.css">
+    <link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
 </head>
     <body class="hold-transition fixed skin-blue sidebar-mini">
         <div class="wrapper">
@@ -178,48 +177,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="" class="col-sm-3 control-label">Date of First Transaction</label>
-                                      
-                                                            <div class="col-sm-9">
-                                                                <div class="input-group date">
-                                                                    <div class="input-group-addon">
-                                                                      <i class="fa fa-calendar"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control pull-right" id="datepicker">
-                                                                </div> 
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputCorporateID" class="col-sm-3 control-label">Corporate ID</label>
-                                      
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" id="CorporateID" placeholder="Enter Corporate ID">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
                                                             <label for="inputGST" class="col-sm-3 control-label">GST Number</label>
                                       
                                                             <div class="col-sm-9">
                                                                 <input type="text" class="form-control" id="inputGST" placeholder="Enter GST number">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputofficeaddresses" class="col-sm-3 control-label">Office Addresses</label>
-                                      
-                                                            <div class="col-sm-8">
-                                                                <input type="type" class="form-control" id="inputofficeaddresses" placeholder="Address">
-                                                            </div>
-                                                            <div class="col-sm-1">
-                                                                <i class="fa fa-plus add-more"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"> 
-                                                            <label for="inputSPOCs" class="col-sm-3 control-label">SPOCs</label>
-                                      
-                                                            <div class="col-sm-9">
-                                                                <div class="tag-container">
-                                                                    <input type="text" class="form-control" id="">
-                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -248,6 +209,26 @@
                                                                 <input type="number" class="form-control" id="inputTurnoverofthecompany" placeholder="Turnover of the Company">
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="inputofficeaddresses" class="col-sm-3 control-label">Office Addresses</label>
+                                                            
+                                                            <div class="col-sm-8 input_fields_wrap">
+                                                                <input type="type" class="form-control" id="inputofficeaddresses" placeholder="Address">
+                                                            </div>
+                                                            <div class="col-sm-1">
+                                                                <button type="button" class="add_field_button"><i class="fa fa-plus add-more"></i></button>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="inputSPOCs" class="col-sm-3 control-label">SPOCs</label>
+                                      
+                                                            <div class="col-sm-9">
+                                                                <div class="tag-container">
+                                                                    <input type="text" class="form-control" id="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="col-sm-12 text-center">
                                                             <button type="button" class="btn btn-primary">SAVE & NEXT</button>
                                                         </div>
@@ -261,24 +242,22 @@
                                                 <form class="form-horizontal">
                                                     <div class="box-body">
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="inputcorporatename" class="col-sm-4 control-label">Corporate Name</label>
+                                                                    <label for="inputcorporatename" class="col-sm-2 control-label">Category</label>
                                               
-                                                                    <div class="col-sm-8">
-                                                                        <input type="type" class="form-control" id="inputcorporatename" placeholder="Corporate Name">
+                                                                    <div class="col-sm-10">
+                                                                        <select class="form-control js-example-basic-multiple" name="states[]" multiple="multiple">
+                                                                            <option value="fashion">Fashion</option>
+                                                                            <option value="kids">Kids</option>
+                                                                            <option value="electronics and media">Electronics and Media</option>
+                                                                            <option value="food">Food</option>
+                                                                            <option value="furniture">Furniture</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="inputbrandID" class="col-sm-4 control-label">Brand ID</label>
-                                              
-                                                                    <div class="col-sm-8">
-                                                                        <input type="type" class="form-control text-uppercase" id="inputbrandID" placeholder="Brand ID">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label for="inputbrandname" class="col-sm-4 control-label">Brand Name</label>
@@ -457,15 +436,6 @@
                                               
                                                                     <div class="col-sm-8">
                                                                         <input type="text" class="form-control" id="inputskucode" placeholder="SKU Code">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="inputskuserialnumbers" class="col-sm-4 control-label">SKU Serial Numbers</label>
-                                              
-                                                                    <div class="col-sm-8">
-                                                                        <input type="text" class="form-control" id="inputskuserialnumbers" placeholder="SKU Serial Numbers">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -657,83 +627,172 @@
                                             <div class="box box-info">
                                                 <form class="form-horizontal">
                                                     <div class="box-body">
-                                                        <div class="row emi-options">
-                                                            <div class="col-md-10">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>EMI tenure (Up to 3, 6, 9, 12 months)</label>
-                                                                    <div class="onoffswitch4 pull-right">
-                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch1" checked>
-                                                                        <label class="onoffswitch4-label" for="myonoffswitch1">
-                                                                            <span class="onoffswitch4-inner"></span>
-                                                                            <span class="onoffswitch4-switch"></span>
-                                                                        </label>
+                                                                    <label for="inputbrandname" class="col-sm-4 control-label">SKU</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control">
+                                                                            <option disabled="" selected="" hidden="">Select option</option>
+                                                                            <option>SKU001</option>
+                                                                            <option>SKU002</option>
+                                                                            <option>SKU003</option>
+                                                                            <option>SKU004</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-10">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label>Agreed subvention commercials with brand with Paytail
-                                                                        <ol class="list-group emi-list"  type="a">
-                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
-                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
-                                                                            </li>
-                                                                        </ol>
-                                                                    </label>
-                                                                    <div class="onoffswitch4 pull-right">
-                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch2" checked>
-                                                                        <label class="onoffswitch4-label" for="myonoffswitch2">
-                                                                            <span class="onoffswitch4-inner"></span>
-                                                                            <span class="onoffswitch4-switch"></span>
-                                                                        </label>
+                                                                    <label for="inputbrandname" class="col-sm-4 control-label">EMI Tenure</label>
+                                              
+                                                                    <div class="col-sm-8">
+                                                                        <select class="form-control">
+                                                                            <option disabled="" selected="" hidden="">Select option</option>
+                                                                            <option>3</option>
+                                                                            <option>6</option>
+                                                                            <option>9</option>
+                                                                            <option>12</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-10">
+                                                            <div class="col-md-4">
                                                                 <div class="form-group">
-                                                                    <label>Brand subvention cost + Merchant 
-                                                                        <ol class="list-group emi-list"  type="a">
-                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
-                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
-                                                                            </li>
-                                                                        </ol>
-                                                                    </label>
-                                                                    <div class="onoffswitch4 pull-right">
-                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch3" checked>
-                                                                        <label class="onoffswitch4-label" for="myonoffswitch3">
-                                                                            <span class="onoffswitch4-inner"></span>
-                                                                            <span class="onoffswitch4-switch"></span>
-                                                                        </label>
+                                                                    <label for="inputbrandname" class="col-sm-8 control-label">Brand Subvention %age</label>
+                                              
+                                                                    <div class="col-sm-4">
+                                                                        <input type="number" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-10">
+                                                            <div class="col-md-4">
                                                                 <div class="form-group">
-                                                                    <label>Merchant Subvention (Total EMI cost minus brand sub vented) 
-                                                                        <ol class="list-group emi-list"  type="a">
-                                                                            <li class="list-group-item">3 months | Cost % | Upfront payment % </li>
-                                                                            <li class="list-group-item">6 months  | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">9 months | Cost % | Upfront payment % (if applicable) </li>
-                                                                            <li class="list-group-item">12 months | Cost % | Upfront payment % (if applicable) 
-                                                                            </li>
-                                                                        </ol>
-                                                                    </label>
-                                                                    <div class="onoffswitch4 pull-right">
-                                                                        <input type="checkbox" name="onoffswitch4" class="onoffswitch4-checkbox" id="myonoffswitch4" checked>
-                                                                        <label class="onoffswitch4-label" for="myonoffswitch4">
-                                                                            <span class="onoffswitch4-inner"></span>
-                                                                            <span class="onoffswitch4-switch"></span>
-                                                                        </label>
+                                                                    <label for="inputbrandname" class="col-sm-8 control-label">Merchant Subvention %age</label>
+                                              
+                                                                    <div class="col-sm-4">
+                                                                        <input type="number" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-12 text-center">
-                                                                <button class="btn btn-primary">SAVE & NEXT</button>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label for="inputbrandname" class="col-sm-8 control-label">Upfront %age</label>
+                                              
+                                                                    <div class="col-sm-4">
+                                                                        <input type="number" class="form-control">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <div class="col-sm-12 text-center">
+                                                            <button class="btn btn-primary">SAVE</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive scroll-table-campign-page">
+                                                        <table id="example2" class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SKU</th>
+                                                                    <th>EMI Tenure</th>
+                                                                    <th>Brand Subvention</th>
+                                                                    <th>Merchant Subvention</th>
+                                                                    <th>Upfront</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SKU001
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">3
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">2
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">1
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">0
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SKU002
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">6
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">2
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">1
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">16
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SKU001
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">9
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">2
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">1
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">33
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">SKU001
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">12
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">2
+                                                                    </td>
+                                                                    <td class="text-grey fw-600 align-middle" style="vertical-align: middle;">1
+                                                                    </td>
+                                                                    <td class="text-grey align-middle fw-600" style="vertical-align: middle;">33
+                                                                    </td>
+                                                                    
+                                                                    <td class="text-grey fw-600" style="vertical-align: middle;">
+                                                                        <a class="btn btn-box-tool hvr-grow">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-box-tool hvr-grow" >
+                                                                            <i class="fa fa-trash"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                    <div class="col-sm-12 text-center">
+                                                        <button class="btn btn-primary">SAVE & DONE</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -868,10 +927,9 @@
         <script src="dist/js/demo.js"></script>
         
         <!-- DataTables -->
-        <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower_components/datatable/jquery.dataTables.js"></script>
         <!-- Select2 -->
-        <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+        <script src="bower_components/select2/dist/js/select2.min.js"></script>
         <script>
             $(function () {
                 //Date picker
@@ -880,5 +938,23 @@
                 })
             });
         </script>
+        <!-- select2 -->
+        <script>
+            $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+
+        // table
+
+        $(document).ready( function () {
+            $('#example1').DataTable({
+                    "order": [[ 0, "desc" ]]
+                });
+            $('#example2').DataTable({
+                "order": [[ 0, "desc" ]]
+            });
+        } );
+        </script>
+        
     </body>
 </html>
