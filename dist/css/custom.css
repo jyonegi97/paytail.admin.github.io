@@ -568,7 +568,23 @@ input[type="number"] {
   -o-transition: all 0.3s ease-in 0s;
   transition: all 0.3s ease-in 0s;
 }
+.dataTables_filter {
+  display: none;
+}
 
+#preview {
+  max-height: 256px;
+  height: auto;
+  width: auto;
+  padding: 5px;
+}
+#img_container {
+  border-radius: 5px;
+  width: auto;
+}
+.category-check {
+  margin-left: 0 !important;
+}
 @media only screen and (max-width: 375px) {
   .list-mobile {
     display: table-caption;
